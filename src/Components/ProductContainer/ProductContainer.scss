@@ -1,0 +1,13 @@
+.productContainer {
+  display: flex;
+  padding: 6rem 3rem 2rem;
+  margin-top: -100px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: linear-gradient(
+    to bottom,
+    rgba(3, 125, 186, 1),
+    18%,
+    rgba(3, 125, 186, 0)
+  );
+}
