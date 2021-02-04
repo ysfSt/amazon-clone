@@ -3,9 +3,22 @@ import "./Product.scss";
 import StarRoundedIcon from "@material-ui/icons/StarRounded";
 import AddShoppingCartRoundedIcon from "@material-ui/icons/AddShoppingCartRounded";
 import StarHalfRoundedIcon from "@material-ui/icons/StarHalfRounded";
+import { useStateValue } from "../StateProvider/StateProvider";
 
 const Product = ({ id, title, rating, price, image }) => {
-  
+  const [{ card }, dispatch] = useStateValue();
+  const addToCard = () => {
+    dispatch({
+      type: "ADD_TO_CARD",
+      item: {
+        id,
+        title,
+        rating,
+        price,
+        image,
+      },
+    });
+  };
   return (
     <div className="product">
       <div className="product__info">
@@ -25,7 +38,7 @@ const Product = ({ id, title, rating, price, image }) => {
       </div>
 
       <img src={image} className="product__image" alt="" />
-      <button className="product__button" >
+      <button className="product__button" onClick={addToCard}>
         <AddShoppingCartRoundedIcon className="addCardIcon" />
         Add to card
       </button>

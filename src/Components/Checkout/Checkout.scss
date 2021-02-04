@@ -1,0 +1,12 @@
+.checkout {
+  display: flex;
+  .checkout__adsImage {
+    display: block;
+    height: 80px;
+    margin-top: 1.3rem;
+  }
+  .checkout__main {
+    margin-top: 2rem;
+    padding-left: 1.3rem;
+  }
+}
